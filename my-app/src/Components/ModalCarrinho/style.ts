@@ -4,9 +4,14 @@ export const Container = styled.div`
   width: 80%;
   position: absolute;
   background-color: var(--branco);
-  top: 20px;
+  top: 38px;
   right: 7%;
   padding-bottom: 28px;
+
+    .essa{
+        overflow-x: auto;
+        height: 303px;
+    }
 
   .divP {
     width: 100%;
@@ -31,8 +36,10 @@ export const Container = styled.div`
   }
 
   .lixeira{
-    margin: 21px 13px;
+    margin: 21px 1px;
   }
+
+
 
   .divValor{
     display: flex;
@@ -62,5 +69,51 @@ export const Container = styled.div`
     border: none;
     height: 50px;
     border-radius: 6px;
+  }
+
+  .divVazio{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .h2Vazio{
+    margin: 0 auto;
+    width: max-content;
+    padding: 45px 0px 15px;
+  }
+
+  .spanVazio{
+    width: max-content;
+    margin: 0 auto 30px;
+  }
+
+  @media(min-width: 700px){
+    width: 500px;
+    border-radius: 0px 0px 8px 8px;
+    left: 18%;
+
+    .lixeira{
+    margin: 21px 13px;
+  }
+  }
+
+  @media(min-width: 800px){
+    left: 19%;
+  }
+
+  @media(min-width: 900px){
+    left: 22%;
+  }
+  
+  @media(min-width: 1000px){
+    left: 23%;
+  }
+
+  @media(min-width: 1100px){
+    left: 24%;
+  }
+
+  @media(min-width: 1200px){
+    left: 32%;
   }
 `;

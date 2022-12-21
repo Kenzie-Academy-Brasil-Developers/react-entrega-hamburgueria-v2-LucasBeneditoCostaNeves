@@ -26,7 +26,6 @@ export function Itens(element: iItens) {
     if (indexOf == -1) {
       adicionarAoCarrinho(element);
       somarValor(element)
-      // definirValorTotal(valorTotal + element.price);
       toast("Item adicionado no seu Carrinho! 🛒");
     } else if (indexOf !== -1) {
       toast.error("Item removido do carrinho");
