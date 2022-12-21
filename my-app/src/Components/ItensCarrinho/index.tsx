@@ -33,7 +33,7 @@ export function ItensCarrinho(element) {
             </div>
           </div>
         </div>
-        <h2 className="lixeira">Lucas</h2>
+        <h2 className="lixeira" onClick={() => removerDoCarrinho(element.name)}>Lucas</h2>
       </div>
     </Container>
   );

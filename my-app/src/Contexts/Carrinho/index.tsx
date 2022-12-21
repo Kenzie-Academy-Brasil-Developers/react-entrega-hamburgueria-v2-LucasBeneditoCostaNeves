@@ -9,7 +9,16 @@ interface iContextoCarrinhoProps {
   children: React.ReactNode;
 }
 
-export const ContextoCarrinho = createContext({});
+interface iCreateContext{
+    itemCarrinho: iCreateContext;
+    adicionarAoCarrinho: (item: iDados) => void;
+    removerDoCarrinho: (nome: string) => void;
+    removerTodoCarrinho: () => void;
+    somarValor: (element: iDados) => void;
+    subtrairValor: (element: iDados) => void;
+}
+
+export const ContextoCarrinho = createContext({} as iCreateContext);
 
 export function FunçoesDeCarrinho({ children }: iContextoCarrinhoProps) {
   const [itemCarrinho, definirItemCarrinho] = useState<iDados[]>([]);
@@ -27,21 +36,24 @@ export function FunçoesDeCarrinho({ children }: iContextoCarrinhoProps) {
   }
 
   function removerTodoCarrinho() {
+    if(itemCarrinho.length){
+        definirModalCarrinho(false)
+    }
     definirItemCarrinho([]);
     window.location.reload()
   }
 
-  function somarValor(element){
+  function somarValor(element: iDados){
     definirValorTotal(valorTotal + element.price);
   }
 
-  function subtrairValor(element){
+  function subtrairValor(element: iDados){
     definirValorTotal(valorTotal - element.price);
   }
 
   return (
     <ContextoCarrinho.Provider
-      value={{ itemCarrinho, definirItemCarrinho, adicionarAoCarrinho, removerDoCarrinho, removerTodoCarrinho, valorTotal, definirValorTotal, somarValor, subtrairValor }}
+      value={{ itemCarrinho, definirItemCarrinho, adicionarAoCarrinho, removerDoCarrinho, removerTodoCarrinho, valorTotal, definirValorTotal, somarValor, subtrairValor, definirModalCarrinho, abrirModalCarrinho }}
     >
       {children}
     </ContextoCarrinho.Provider>

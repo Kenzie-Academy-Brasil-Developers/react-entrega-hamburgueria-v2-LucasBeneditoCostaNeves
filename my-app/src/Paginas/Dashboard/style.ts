@@ -13,4 +13,12 @@ export const Container = styled.div`
     font-size: 16px;
     color: var(--toastify-color-progress-info);
   }
+
+  .divTopLogo{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    width: 91%;
+    margin: 0px auto;
+  }
 `;

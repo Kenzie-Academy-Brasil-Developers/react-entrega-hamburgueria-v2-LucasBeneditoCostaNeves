@@ -13,8 +13,15 @@ export const Container = styled.div`
     height: 40px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: var(--verde);
     border-radius: 8px 8px 0px 0px;
+  }
+
+  .x{
+    font-size: 18px;
+    margin-right: 15px;
+    color: var(--branco);
   }
 
   .pCarrinho{

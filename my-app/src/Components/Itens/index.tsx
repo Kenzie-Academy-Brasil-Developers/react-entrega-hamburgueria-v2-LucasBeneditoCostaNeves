@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { ContextoCarrinho } from "../../Contexts/Carrinho";
 import { iDados } from "../../Contexts/Hamburgueria";
@@ -32,6 +32,20 @@ export function Itens(element: iItens) {
       toast.error("Item removido do carrinho");
     }
   }
+
+  useEffect(() => {
+    //Vou verificar se esse item foi deletado pelo modal, se for, irei trocar o innerText dele e suas funcionalidades
+    function verificarExistencia(){
+      const ids = itemCarrinho.map((elemento: iDados) => elemento.id);
+      const indexOf = ids.indexOf(element.id);
+  
+      if(indexOf == -1){
+        definirTeste(true)
+      }
+    }
+    verificarExistencia() 
+  },[itemCarrinho])
+
 
   function innerTextBotao(element :iDados){
     if(teste){

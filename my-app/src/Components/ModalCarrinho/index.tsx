@@ -4,16 +4,21 @@ import { ItensCarrinho } from "../ItensCarrinho";
 import { Container } from "./style";
 
 export function ModalCarrinho() {
-  const { itemCarrinho, valorTotal, removerTodoCarrinho } =
+  const { itemCarrinho, valorTotal, removerTodoCarrinho, abrirModalCarrinho, definirModalCarrinho } =
     useContext(ContextoCarrinho);
+
+    if(!abrirModalCarrinho){
+        return;
+    }
 
   if (itemCarrinho.length > 0) {
     return (
       <Container>
         <div className="divP">
           <p className="pCarrinho">Carrinho de Compras</p>
+          <span className="x" onClick={() => definirModalCarrinho(false)}>X</span>
         </div>
-        <div className="essa">{itemCarrinho.map((element) => ItensCarrinho(element))}</div>
+        <ul className="essa">{itemCarrinho.map((element) => ItensCarrinho(element))}</ul>
         <div className="divValor">
           <span className="spanTotal">Total:</span>
           <span className="valor">{valorTotal}</span>
@@ -24,6 +29,8 @@ export function ModalCarrinho() {
       </Container>
     );
   } else {
-    return <div></div>;
+    return <div>
+        <h1>Lucas</h1>
+    </div>;
   }
 }
