@@ -10,7 +10,7 @@ export const Container = styled.div`
 
     .essa{
         overflow-x: auto;
-        height: 303px;
+        max-height: 303px;
     }
 
   .divP {
@@ -38,8 +38,6 @@ export const Container = styled.div`
   .lixeira{
     margin: 21px 1px;
   }
-
-
 
   .divValor{
     display: flex;

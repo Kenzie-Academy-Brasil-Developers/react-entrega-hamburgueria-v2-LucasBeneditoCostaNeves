@@ -10,7 +10,8 @@ interface iContextoCarrinhoProps {
 }
 
 interface iCreateContext{
-    itemCarrinho: iCreateContext;
+    itemCarrinho: iDados[];
+    definirItemCarrinho: iDados;
     adicionarAoCarrinho: (item: iDados) => void;
     removerDoCarrinho: (nome: string) => void;
     removerTodoCarrinho: () => void;
