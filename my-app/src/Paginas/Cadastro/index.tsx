@@ -12,6 +12,10 @@ export function PaginaDeCadastro() {
   const { register, handleSubmit } = useForm();
   const { cadastrar } = useContext(ContextoHamburgueria);
 
+  interface iTeste {
+    cadastrar: void;
+  }
+
   return (
     <Container>
       <Info />

@@ -10,13 +10,16 @@ interface iContextoCarrinhoProps {
 }
 
 interface iCreateContext{
-    itemCarrinho: iDados[];
-    definirItemCarrinho: iDados;
+    itemCarrinho: iDados[] | iDados;
+    definirItemCarrinho: iDados | iDados[];
     adicionarAoCarrinho: (item: iDados) => void;
     removerDoCarrinho: (nome: string) => void;
     removerTodoCarrinho: () => void;
     somarValor: (element: iDados) => void;
     subtrairValor: (element: iDados) => void;
+    valorTotal: number;
+    abrirModalCarrinho: boolean;
+    definirModalCarrinho: boolean
 }
 
 export const ContextoCarrinho = createContext({} as iCreateContext);
@@ -44,7 +47,7 @@ export function FunçoesDeCarrinho({ children }: iContextoCarrinhoProps) {
     window.location.reload()
   }
 
-  function somarValor(element: iDados){
+  function somarValor(element: string){
     definirValorTotal(valorTotal + element.price);
   }
 
