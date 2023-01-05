@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createContext } from "react";
 import { api } from "../../Service";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import { iDados } from "../Hamburgueria";
 
 interface iContextoCarrinhoProps {

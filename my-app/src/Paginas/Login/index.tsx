@@ -50,7 +50,6 @@ export function PaginaDeLogin() {
           </form>
         </div>
       </div>
-      <ToastContainer position="top-center" autoClose={1500}/>
     </Container>
   );
 }

@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import ('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;800;900&display=swap');
 
 const GlobalStyle = createGlobalStyle`
 

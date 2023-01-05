@@ -38,11 +38,6 @@ export function PaginaDaDashboard() {
 
       {dados && <Lista dados={dados} />}
       <Carrinho />
-      <ToastContainer
-        autoClose={1000}
-        position={"top-center"}
-        className="toast"
-      />
       {abrirModalCarrinho && <ModalCarrinho />}
     </Container>
   );

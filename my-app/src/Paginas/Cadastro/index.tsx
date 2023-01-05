@@ -64,7 +64,6 @@ export function PaginaDeCadastro() {
           </form>
         </div>
       </div>
-      <ToastContainer position="top-center"/>
     </Container>
   );
 }
