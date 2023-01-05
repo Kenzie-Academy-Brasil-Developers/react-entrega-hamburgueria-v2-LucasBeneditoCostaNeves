@@ -6,7 +6,7 @@ import { Li } from "./style";
 
 interface iItens {
   category: string;
-  id: string;
+  id: any;
   img: string;
   name: string;
   price: number;

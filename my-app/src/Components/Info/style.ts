@@ -13,9 +13,8 @@ export const Container = styled.div`
   }
 
   img {
-    width: 75px;
-    height: 66px;
-    min-width: 75px;
+    width: 42px;
+    height: 41px;
   }
 
   p {

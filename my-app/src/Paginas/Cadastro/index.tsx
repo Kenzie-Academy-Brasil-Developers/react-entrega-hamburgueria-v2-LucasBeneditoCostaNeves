@@ -7,9 +7,16 @@ import { ToastContainer } from 'react-toastify';
 import { ContextoHamburgueria } from "../../Contexts/Hamburgueria";
 import { Container } from "./style";
 
+interface iDataCadastro {
+  name: string;
+  email: string;
+  password: string;
+  repassword?: string;
+}
+
 export function PaginaDeCadastro() {
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<iDataCadastro>();
   const { cadastrar } = useContext(ContextoHamburgueria);
 
   interface iTeste {

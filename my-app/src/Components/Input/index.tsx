@@ -1,6 +1,13 @@
 import React from 'react'
 
-export function Input({label,placeholder,type,register}){
+interface iInput{
+  label: string;
+  placeholder: string;
+  type: string;
+  register: any;
+} 
+
+export function Input({label,placeholder,type,register}: iInput){
   return (
     <div className='divInput'>
         <label>{label}</label>

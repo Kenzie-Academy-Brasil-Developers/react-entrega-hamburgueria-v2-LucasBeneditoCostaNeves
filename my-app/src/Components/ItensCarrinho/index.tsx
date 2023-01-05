@@ -2,16 +2,16 @@ import React, { useContext, useState } from "react";
 import { ContextoCarrinho } from "../../Contexts/Carrinho";
 import { Container } from "./style";
 
-export function ItensCarrinho(element) {
+export function ItensCarrinho(element: any) {
     const { removerDoCarrinho, valorTotal, definirValorTotal, somarValor, subtrairValor  } = useContext(ContextoCarrinho)
     // const [ quantidade, definirQuantidade ]  = useState(true)
     // const [ teste, definirTeste ] = useState(1)
 
-    function adicionarQuantidade(element){
+    function adicionarQuantidade(element: any){
         somarValor(element)
     }
 
-    function diminuirQuantidade(element){
+    function diminuirQuantidade(element: any){
         // if(quantidade == 1){
             // removerDoCarrinho(element.name)
         // } else{

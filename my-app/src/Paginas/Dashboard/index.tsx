@@ -7,10 +7,13 @@ import { ModalCarrinho } from "../../Components/ModalCarrinho";
 import { ContextoCarrinho } from "../../Contexts/Carrinho";
 import { ContextoHamburgueria } from "../../Contexts/Hamburgueria";
 import { Container } from "./style";
+import carrinho from "../../imgs/carrinho.png";
+import porta from "../../imgs/porta.png";
 
 export function PaginaDaDashboard() {
   const { protejerRotas, dados } = useContext(ContextoHamburgueria);
-  const { definirModalCarrinho } = useContext(ContextoCarrinho)
+  const { definirModalCarrinho, abrirModalCarrinho } =
+    useContext(ContextoCarrinho);
 
   useEffect(() => {
     protejerRotas();
@@ -20,17 +23,16 @@ export function PaginaDaDashboard() {
     <Container>
       <div className="divTopLogo">
         <Logo />
-        <div>
+        <div className="imgs">
           <input type="text" name="" id="" />
-          <span onClick={() => definirModalCarrinho(true)}>carrinho</span>
-          <span
+          <img className="carrinho" src={carrinho} onClick={() => definirModalCarrinho(true)}></img>
+          <img
+            src={porta}
             onClick={() => {
               localStorage.removeItem("@Token");
               protejerRotas();
             }}
-          >
-            sair
-          </span>
+          ></img>
         </div>
       </div>
 
@@ -41,7 +43,7 @@ export function PaginaDaDashboard() {
         position={"top-center"}
         className="toast"
       />
-      <ModalCarrinho />
+      {abrirModalCarrinho && <ModalCarrinho />}
     </Container>
   );
 }

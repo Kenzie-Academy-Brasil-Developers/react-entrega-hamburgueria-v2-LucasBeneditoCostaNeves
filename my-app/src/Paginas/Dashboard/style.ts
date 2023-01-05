@@ -21,4 +21,13 @@ export const Container = styled.div`
     width: 91%;
     margin: 0px auto;
   }
+
+  .imgs{
+    display: flex;
+    align-items: center;
+  }
+
+  .carrinho{
+    margin: 0px 12px;
+  }
 `;

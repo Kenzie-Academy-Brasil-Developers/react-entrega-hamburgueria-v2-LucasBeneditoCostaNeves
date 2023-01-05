@@ -13,6 +13,6 @@ interface iElement {
 }
 
 
-export function Lista({ dados }: iElement) {
-  return <Ul>{dados && dados.map((element: iElement) => Itens(element))}</Ul>;
+export function Lista({ dados }: any) {
+  return <Ul>{dados && dados.map((element: any) => Itens(element))}</Ul>;
 }

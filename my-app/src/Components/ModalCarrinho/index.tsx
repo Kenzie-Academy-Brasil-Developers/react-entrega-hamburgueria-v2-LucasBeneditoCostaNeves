@@ -12,9 +12,9 @@ export function ModalCarrinho() {
     definirModalCarrinho,
   } = useContext(ContextoCarrinho);
 
-  if (!abrirModalCarrinho) {
-    return;
-  }
+  // if (!abrirModalCarrinho) {
+  //   return;
+  // }
 
   if (itemCarrinho.length > 0) {
     return (

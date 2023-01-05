@@ -8,8 +8,13 @@ import { ToastContainer } from 'react-toastify';
 import { api } from "../../Service";
 import { Container } from "./style";
 
+interface iDataLogin {
+  email: string;
+  password: string;
+}
+
 export function PaginaDeLogin() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<iDataLogin>();
   const { login, autoLogin } = useContext(ContextoHamburgueria);
 
   useEffect(() => {

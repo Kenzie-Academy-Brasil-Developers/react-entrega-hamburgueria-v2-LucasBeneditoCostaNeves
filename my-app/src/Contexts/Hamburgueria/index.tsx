@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { api } from "../../Service";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { SubmitHandler } from "react-hook-form";
 
 interface iContextoHamburgueriaProps {
   children: React.ReactNode;
@@ -21,6 +22,7 @@ interface iDataCadastro {
   name: string;
   email: string;
   password: string;
+  repassword?: string;
 }
 
 interface iDataLogin {
@@ -29,8 +31,8 @@ interface iDataLogin {
 }
 
 interface iCreateContext {
-  cadastrar: (data: iDataCadastro) => void;
-  login: (data: iDataLogin) => void;
+  cadastrar: SubmitHandler<iDataCadastro>;
+  login: SubmitHandler<iDataLogin>;
   autoLogin: () => void;
   protejerRotas: () => void;
   dados: iDados | null;
@@ -42,8 +44,13 @@ export function FunçoesDeRequisicoes({ children }: iContextoHamburgueriaProps) 
   const navigate = useNavigate();
   const [dados, definirDados] = useState<iDados | null>(null);
 
-  async function cadastrar(data: iDataCadastro) {
+   const cadastrar:SubmitHandler<iDataCadastro> = async (data) => {
     console.log(data);
+
+    if(data.password != data.repassword){
+      return toast.error("Senhas diferentes")
+    }
+
     try {
       const resposta = await api.post("/users", data);
 
@@ -55,7 +62,7 @@ export function FunçoesDeRequisicoes({ children }: iContextoHamburgueriaProps) 
     }
   }
 
-  async function login(data: iDataLogin) {
+   const login:SubmitHandler<iDataLogin> =  async (data) => {
     console.log(data);
     try {
       const resposta = await api.post("/login", data);
