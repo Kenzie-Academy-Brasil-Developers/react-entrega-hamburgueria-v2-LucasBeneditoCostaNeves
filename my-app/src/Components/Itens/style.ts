@@ -45,6 +45,8 @@ export const Li = styled.li`
         color: var(--branco);
         background-color: var(--verde);
         border-radius: 4px;
+        width: 80px;
+        margin: 0 auto;
     }
 
     @media(min-width:800px){

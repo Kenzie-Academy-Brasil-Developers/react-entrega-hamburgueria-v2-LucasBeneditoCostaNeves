@@ -37,4 +37,9 @@ export const Container = styled.li`
   .nome{
     margin-bottom: 14px;
   }
+
+  .lixeira{
+    width: 14px;
+    height: 16px;
+  }
 `;

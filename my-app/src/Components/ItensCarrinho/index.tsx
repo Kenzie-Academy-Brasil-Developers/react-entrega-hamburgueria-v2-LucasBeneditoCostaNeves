@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { ContextoCarrinho } from "../../Contexts/Carrinho";
+import img from "../../imgs/lixeira.png"
 import { Container } from "./style";
 
 export function ItensCarrinho(element: any) {
@@ -28,12 +29,12 @@ export function ItensCarrinho(element: any) {
             <p className="nome">{element.name}</p>
             <div className="divBotoes">
               <button className="botao" onClick={() => diminuirQuantidade(element)} >-</button>
-              <p className="quantidade">asa</p>
+              <p className="quantidade">0</p>
               <button className="botao" onClick={() => adicionarQuantidade(element)}>+</button>
             </div>
           </div>
         </div>
-        <h2 className="lixeira" onClick={() => removerDoCarrinho(element.name)}>Lucas</h2>
+        <img src={img} className="lixeira" onClick={() => removerDoCarrinho(element.name)}></img>
       </div>
     </Container>
   );
